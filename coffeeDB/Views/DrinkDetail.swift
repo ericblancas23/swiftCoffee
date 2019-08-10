@@ -9,15 +9,32 @@
 import SwiftUI
 
 struct DrinkDetail: View {
+    var drink:Drink
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello World!"/*@END_MENU_TOKEN@*/)
+        List {
+            ZStack(alignment: .bottom) {
+                Image(drink.imageName)
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                Rectangle()
+                    .frame(height: 80)
+                    .opacity(0.35)
+                    .blur(radius: 10)
+                HStack {
+                    VStack(alignment: .leading, spacing: 8) {
+                        Text(drink.name)
+                    }
+                }
+            }
+        }
     }
 }
 
 #if DEBUG
 struct DrinkDetail_Previews: PreviewProvider {
     static var previews: some View {
-        DrinkDetail()
+        DrinkDetail(drink: drinkData[3])
     }
 }
 #endif
