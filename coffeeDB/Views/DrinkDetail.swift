@@ -39,7 +39,7 @@ struct DrinkDetail: View {
                     .lineSpacing(12)
                 HStack {
                     Spacer()
-                    //OrderButton()
+                    OrderButton()
                     Spacer()
                 }
             }
@@ -49,9 +49,13 @@ struct DrinkDetail: View {
 
 struct OrderButton: View {
     var body: some View {
-        Button({}) {
+        Button(action: {}) {
             Text("Order Now")
-        }
+        }.frame(width:200, height: 50)
+            .foregroundColor(Color.white)
+            .font(.headline)
+            .background(Color.blue)
+        .cornerRadius(10)
     }
 }
 
