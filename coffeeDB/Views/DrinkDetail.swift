@@ -31,6 +31,26 @@ struct DrinkDetail: View {
                     Spacer()
                 }
             }
+        .listRowInsets(EdgeInsets())
+            VStack(alignment: .leading) {
+                Text(drink.description)
+                    .font(.body)
+                    .lineLimit(nil)
+                    .lineSpacing(12)
+                HStack {
+                    Spacer()
+                    //OrderButton()
+                    Spacer()
+                }
+            }
+        }
+    }
+}
+
+struct OrderButton: View {
+    var body: some View {
+        Button({}) {
+            Text("Order Now")
         }
     }
 }
