@@ -24,7 +24,11 @@ struct DrinkDetail: View {
                 HStack {
                     VStack(alignment: .leading, spacing: 8) {
                         Text(drink.name)
+                            .font(.largeTitle)
                     }
+                    .padding(.leading)
+                    .padding(.bottom)
+                    Spacer()
                 }
             }
         }
