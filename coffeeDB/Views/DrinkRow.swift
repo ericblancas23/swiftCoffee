@@ -13,15 +13,14 @@ struct DrinkRow : View {
     var drinks:[Drink]
     
     var body: some View {
-        VStack(alignment: .leading) {
-            
+        VStack() {
             Text(self.categoryName)
                 .font(.title)
             
             ScrollView(showsHorizontalIndicator: false) {
-                HStack(alignment: .top) {
-                    ForEach(self.drinks.identified(by: \.name)) { drink in
-                        NavigationButton(destination: DrinkDetail(drink: drink)) {
+                HStack(alignment: .center) {
+                    ForEach(self.drinks.identified(by: drinks.name)) { drink in
+                        NavigationLink(destination: DrinkDetail(drink: drink)) {
                             DrinkItem(drink: drink)
                                 .frame(width: 300)
                                 .padding(.trailing, 30)
